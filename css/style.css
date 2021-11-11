@@ -32,6 +32,20 @@ body {
 
 .item {
  height: 60vh;
+ display: none;
+ position: relative;
+}
+
+.item.active {
+ display: block;
+}
+
+.description {
+ position: absolute;
+ bottom: 30px;
+ right: 20px;
+ color: white;
+ text-align: right;
 }
 
 .item img {
@@ -80,7 +94,7 @@ body {
  bottom: 0;
 }
 
-.active {
+.thumb.active {
  opacity: 1;
  border: 2px solid grey;
 }
