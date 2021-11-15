@@ -22,6 +22,9 @@ const text = [
  "Barcellona è una città della Spagna di 1 664 162 abitanti, capoluogo della Catalogna, una comunità autonoma della parte orientale dello Stato, oltre che dell'omonima provincia e della comarca del Barcelonès: soprannominata Ciutat Comtal o Ciudad Condal (Città dei Conti), è la seconda città della Spagna per numero di abitanti dopo la capitale Madrid.",
 ];
 
+let background = document.querySelector(".background");
+background.innerHTML = `<img src="${items[0]}" alt="${title[0]} background">`;
+
 let itemsContent = "";
 let thumbContent = "";
 
@@ -74,6 +77,8 @@ next.addEventListener("click", function () {
   thumbImg[0].classList.add("active");
   activeItem = 0;
  }
+
+ background.innerHTML = `<img src="${items[activeItem]}" alt="${title[activeItem]} background">`;
 });
 
 prev.addEventListener("click", function () {
@@ -91,4 +96,6 @@ prev.addEventListener("click", function () {
   thumbImg[items.length - 1].classList.add("active");
   activeItem = items.length - 1;
  }
+
+ background.innerHTML = `<img src="${items[activeItem]}" alt="${title[activeItem]} background">`;
 });

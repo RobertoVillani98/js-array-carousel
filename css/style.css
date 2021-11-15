@@ -10,7 +10,21 @@ body {
  display: flex;
  justify-content: center;
  align-items: center;
- background-color: lightgrey;
+}
+
+.background {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ background: black;
+ z-index: -1;
+ overflow: hidden;
+}
+.background img {
+ width: 100%;
+ height: 100%;
+ opacity: 0.5;
+ filter: blur(20px);
 }
 
 .container {
@@ -47,6 +61,7 @@ body {
  color: white;
  text-align: right;
  font-weight: bold;
+ width: 80%;
 }
 
 .item img {
@@ -54,6 +69,7 @@ body {
  height: 100%;
  object-fit: cover;
  border-radius: 20px;
+ filter: brightness(0.6);
 }
 
 .thumb-container {
@@ -81,15 +97,22 @@ body {
 .prev,
 .next {
  position: absolute;
- left: 50%;
- transform: translateX(-50%);
- background-color: white;
+ left: 43%;
+ background-color: lightgrey;
  width: 30px;
  height: 30px;
  border-radius: 50%;
  line-height: 30px;
  text-align: center;
- margin: 5px 0;
+ margin: 10px 0;
+ cursor: pointer;
+}
+
+.prev:hover,
+.next:hover {
+ transform: scale(1.2);
+ transition: 1s ease;
+ background-color: white;
 }
 
 .prev {
